@@ -9,4 +9,5 @@ dependencies = [
     "openai>=2.8.1",
     "pydantic-ai>=1.23.0",
     "python-dotenv>=1.2.1",
+    "uvicorn>=0.38.0",
 ]
