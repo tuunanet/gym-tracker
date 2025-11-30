@@ -10,5 +10,9 @@ COPY . /app
 WORKDIR /app
 RUN uv sync --frozen --no-cache
 
+# Do not run as root user
+RUN useradd app
+USER app
+
 # Run the application.
-CMD ["/app/.venv/bin/uvicorn", "backend.app.main:app", "--port", "8000", "--host", "0.0.0.0"]
+CMD ["/app/.venv/bin/uvicorn", "app.main:app", "--port", "8000", "--host", "0.0.0.0"]
